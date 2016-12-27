@@ -1,0 +1,20 @@
+  body {
+      margin: 20px;
+  }
+  
+  .menu__items {
+      display: none;
+      position: absolute;
+  }
+  
+  .menu__header::before {
+      content: "▶";
+  }
+  
+  .menu_is_open .menu__items {
+      display: block;
+  }
+  
+  .menu_is_open .menu__header::before {
+      content: "▼";
+  }

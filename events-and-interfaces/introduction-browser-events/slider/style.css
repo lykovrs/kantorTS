@@ -1,0 +1,53 @@
+.slider {
+    max-width: 390px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    padding: 0;
+    background: #ddd;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-size: 24px;
+    line-height: 24px;
+    color: #444;
+    display: block;
+}
+
+.arrow-left {
+    margin-left: -50px;
+}
+
+.arrow-right {
+    margin-right: -50px;
+}
+
+.arrow:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+
+.slider ul {
+    position: relative;
+    height: 130px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+}
+
+.slider ul img {
+    width: 130px;
+    height: 130px;
+    display: block;
+}
+
+.slider ul li {
+    display: inline-block;
+}

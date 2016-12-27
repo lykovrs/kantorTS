@@ -1,0 +1,22 @@
+body {
+    margin: 20px;
+}
+
+.pane {
+    position: relative;
+    background: #cfc;
+    border-top: 2px solid green;
+}
+
+.pane__close {
+    position: absolute;
+    right: 40px;
+    top: 0;
+    color: red;
+    cursor: pointer;
+}
+
+.pane__close::before {
+    position: absolute;
+    content: "[X]";
+}

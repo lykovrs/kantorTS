@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu__header">Сладости (нажми меня)!</div>
+        <ul class="menu__items">
+            <li>Торт</li>
+            <li>Пончик</li>
+            <li>Пирожное</li>
+        </ul>
+    </div>
+    <script src="menu.js"></script>
+    <script>
+        var menuSelector = document.getElementsByClassName('menu')[0];
+        new Menu(menuSelector);
+    </script>
+</body>
+
+</html>
