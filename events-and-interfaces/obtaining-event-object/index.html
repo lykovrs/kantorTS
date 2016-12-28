@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="height: 2000px;">
+
+        Кликните на любое место поля, чтобы мяч перелетел туда.
+        <br> Мяч никогда не вылетит за границы поля.
+
+
+        <div id="field">
+            <img src="https://js.cx/clipart/ball.svg" id="ball"> . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+            . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        </div>
+    </div>
+    <script src="oeo.js"></script>
+    <script>
+      new GameFootball(document.getElementById('field'));   
+    </script>
+</body>
+
+</html>
