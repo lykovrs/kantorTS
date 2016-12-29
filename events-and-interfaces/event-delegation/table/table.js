@@ -1,12 +1,12 @@
-var Table = (function () {
-    function Table(table) {
+var TableSorter = (function () {
+    function TableSorter(table1) {
         var _this = this;
         this._wrapper = null;
         this._head = null;
         this._items = null;
         this._sorted = null;
-        if (table) {
-            this._wrapper = table;
+        if (table1) {
+            this._wrapper = table1;
             // Получаем row с заголовком таблицы
             this._head = this._wrapper.tHead.rows[0];
             // Берем все row из тела для сортировок
@@ -27,7 +27,7 @@ var Table = (function () {
             });
         }
     }
-    Table.prototype.sortOf = function (action) {
+    TableSorter.prototype.sortOf = function (action) {
         // Сохраняем наши rows в массив для сортировки 
         this._sorted = [].slice.call(this._items);
         // Стандартаная сортировка чисел от меньшего к большему
@@ -47,5 +47,5 @@ var Table = (function () {
             });
         }
     };
-    return Table;
+    return TableSorter;
 }());

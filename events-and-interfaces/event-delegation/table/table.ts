@@ -1,12 +1,12 @@
-class Table {
+class TableSorter {
     private _wrapper = null;
     private _head = null;
     private _items = null;
     private _sorted = null;
     
-    constructor(table){
-        if(table){
-            this._wrapper = table;
+    constructor(table1){
+        if(table1){
+            this._wrapper = table1;
             // Получаем row с заголовком таблицы
             this._head = this._wrapper.tHead.rows[0];
             // Берем все row из тела для сортировок

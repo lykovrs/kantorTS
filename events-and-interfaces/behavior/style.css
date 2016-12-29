@@ -1,0 +1,12 @@
+body {
+    margin: 20px;
+}
+
+.tooltip {
+  background: #cfc;
+  border: 1px solid green;
+  position: fixed;
+  border-radius:  10px;
+  padding: 10px;
+  text-align: center;
+}
