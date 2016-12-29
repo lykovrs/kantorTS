@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Перехватываем клик по ссылке</h1>
+    <fieldset id="contents">
+        <legend>#contents</legend>
+        <p>
+            Как насчет почитать <a href="http://wikipedia.org">Википедию</a>, или посетить <a href="http://w3.org"><i>W3.org</i></a> и узнать про современные стандарты?
+        </p>
+  </fieldset> 
+    <script src="link.js"></script>
+    <script>
+        var linkContainer = document.getElementById('contents');
+        new Link(linkContainer);
+    </script>
+
+</body>
+
+</html>
