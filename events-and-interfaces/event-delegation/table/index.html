@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <table class="grid">
+        <thead>
+        <tr>
+            <th data-type="number">Возраст</th>
+            <th data-type="string">Имя</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>5</td>
+            <td>Вася</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Петя</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Женя</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Маша</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Илья</td>
+        </tr>
+        </tbody>
+    </table>
+    <script src="table.js"></script>
+    <script>
+        var table = document.getElementsByClassName('grid')[0];
+        new Table(table);
+    </script>
+
+</body>
+
+</html>

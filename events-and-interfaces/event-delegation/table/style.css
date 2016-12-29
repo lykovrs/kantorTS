@@ -1,0 +1,12 @@
+body {
+    margin: 20px;
+}
+
+th {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+th:hover {
+    text-decoration: none;  
+}
