@@ -1,0 +1,11 @@
+body {
+    margin: 20px;
+}
+.tree li span:hover {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.hide > ul {
+    display: none;
+}

@@ -1,7 +1,6 @@
 class Messages {
     private _wrapper;
     private _items;
-    private _button;
     
     constructor(collection){
         if(collection){
