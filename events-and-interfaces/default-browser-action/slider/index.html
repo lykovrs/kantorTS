@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2>Тренеруем слайдер в один обработчик</h2>
+
+    <section class="slider">
+        <figure class="slider__img">
+            <img class="slider__largeImg" src="https://js.cx/gallery/img1-lg.jpg" alt="Large image">
+        </figure>
+
+        <nav class="slider__thumbs">
+            <!-- При наведении на изображение показывается встроенная подсказка браузера (title) -->
+            <a href="https://js.cx/gallery/img2-lg.jpg" title="Image 2"><img src="https://js.cx/gallery/img2-thumb.jpg"></a>
+            <a href="https://js.cx/gallery/img3-lg.jpg" title="Image 3"><img src="https://js.cx/gallery/img3-thumb.jpg"></a>
+            <a href="https://js.cx/gallery/img4-lg.jpg" title="Image 4"><img src="https://js.cx/gallery/img4-thumb.jpg"></a>
+            <a href="https://js.cx/gallery/img5-lg.jpg" title="Image 5"><img src="https://js.cx/gallery/img5-thumb.jpg"></a>
+            <a href="https://js.cx/gallery/img6-lg.jpg" title="Image 6"><img src="https://js.cx/gallery/img6-thumb.jpg"></a>
+        </nav>
+    </section>
+
+    <script src="slider.js"></script>
+    <script>
+        var slider = document.getElementsByClassName('slider')[0];
+        new Slider(slider);
+    </script>
+
+</body>
+
+</html>
