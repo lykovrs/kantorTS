@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+      #area {
+          display: none;
+          border-width: 3px;
+          border-style: groove;
+          border-color: blue;
+          border-image: initial;
+          padding: 0px;
+      }
+      #view, #area {
+          height: 150px;
+          width: 400px;
+          font-family: arial;
+          font-size: 14px;
+      }
+
+      #view {
+          padding: 2px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: black;
+          border-image: initial;
+      }
+
+    </style>
+</head>
+
+<body>
+  <ul>
+    <li>Ctrl-E to start editing.</li>
+    <li>While editing: Ctrl-S to save, Esc to cancel.</li>
+  </ul>
+
+  <textarea id="area"></textarea>
+  <div id="view">Text</div>
+
+    <script src="ct.js">
+    </script>
+     <script>
+        new CustomTextarea(); 
+    </script>
+</body>
+
+</html>
