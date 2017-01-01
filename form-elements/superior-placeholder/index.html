@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+    /* стиль для input с плейсхолдером */
+
+    .placeholder {
+      color: blue;
+      font-family: Georgia;
+    }
+    /* стиль для подсказки над элементом (вместо плейсхолдера при фокусировке) */
+
+    .placeholder-tooltip {
+      color: blue;
+      font-family: Georgia;
+      position: fixed;
+    }
+  </style>
+</head>
+
+<body>
+    <h2>Красивый placeholder:</h2>
+   
+    <input type="text" data-placeholder="Add text" class="placeholder">
+    <input type="email" data-placeholder="E-mail" class="placeholder">
+
+    <script src="sp.js">
+    </script>
+     <script>
+        new SuperInput(); 
+    </script>
+</body>
+
+</html>
