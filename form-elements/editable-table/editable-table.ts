@@ -9,7 +9,6 @@ class EditableTable {
         this._table.addEventListener('click', event => {
             let target = event.target;
             while(target){
-                console.log(target)
                 // Перехватываем клик по ячейке
                 if(target.nodeName === 'TD' && !this._conditionEdit){
                     this._conditionEdit = true;

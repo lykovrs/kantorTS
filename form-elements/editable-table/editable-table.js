@@ -8,7 +8,6 @@ var EditableTable = (function () {
         this._table.addEventListener('click', function (event) {
             var target = event.target;
             while (target) {
-                console.log(target);
                 // Перехватываем клик по ячейке
                 if (target.nodeName === 'TD' && !_this._conditionEdit) {
                     _this._conditionEdit = true;
