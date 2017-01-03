@@ -1,0 +1,79 @@
+/* общие стили для таблицы */
+* {
+  box-sizing: border-box;
+}
+th {
+  text-align: center;
+  font-weight: bold;
+}
+
+td {
+  width: 150px;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.nw {
+  background-color: #999;
+}
+
+.n {
+  background-color: #03f;
+  color: #fff;
+}
+
+.ne {
+  background-color: #ff6;
+}
+
+.w {
+  background-color: #ff0;
+}
+
+.c {
+  background-color: #60c;
+  color: #fff;
+}
+
+.e {
+  background-color: #09f;
+  color: #fff;
+}
+
+.sw {
+  background-color: #963;
+  color: #fff;
+}
+
+.s {
+  background-color: #f60;
+  color: #fff;
+}
+
+.se {
+  background-color: #0c3;
+  color: #fff;
+}
+
+#bagua-table textarea {
+  display: block;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  resize: none;
+  outline: none; 
+    
+}
+#bagua-table textarea:focus {
+  border: none;
+}
+
+#bagua-table .buttons {
+  position: absolute;
+}
+#bagua-table .active {
+  padding: 0;
+  resize: 0;   
+}
