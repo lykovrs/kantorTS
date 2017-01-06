@@ -24,18 +24,41 @@ class ShowPrompt {
         this._form.addEventListener('submit', () => {
             this._callback(this._text.value);
         });
-        // Закрываем форму при нажатии на ESC
-        // document.addEventListener('keypress', (event) => {
-        //     this._callback(null);  
-        //     console.log(event)  
-        //     this.hide();
-        // });
+        
+        document.addEventListener('keyup', (event) => {
+            // Закрываем форму при нажатии на ESC
+            if (event.keyCode == 27) {
+                this._callback(null);  
+                this.hide();
+           }
+           // Нажатия Tab/Shift+Tab переключают в цикле только по полям формы, они не позволяют переключиться на другие элементы страницы.
+           let firsFormElement = this._form.elements[0];
+           let lastFormElement = this._form.elements[this._form.elements.length - 1];
 
-        // TODO: 
-        // Нажатия Tab/Shift+Tab переключают в цикле только по полям формы, они не позволяют переключиться на другие элементы страницы.
-        // При нажатии на Отмена или на клавишу Esc – должна вызываться функция callback(null). Клавиша Esc должна закрывать форму всегда, даже если поле для ввода сообщения не в фокусе.
+           if (event.keyCode == 9 && !event.shiftKey) {
+                let result = [].some.call(this._form.elements, (item) => {
+                    return document.activeElement === item;
+                });
 
+                if(!result) {
+                    firsFormElement.focus();  
+                }; 
 
+                return false;
+           }
+
+            if (event.keyCode == 9 && event.shiftKey) {
+                let result = [].some.call(this._form.elements, (item) => {
+                    return document.activeElement === item;
+                });
+
+                if(!result) {
+                    lastFormElement.focus();  
+                }; 
+
+                return false;
+           }
+        });
 
     };
 

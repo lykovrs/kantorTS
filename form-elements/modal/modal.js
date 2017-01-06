@@ -17,15 +17,36 @@ var ShowPrompt = (function () {
         this._form.addEventListener('submit', function () {
             _this._callback(_this._text.value);
         });
-        // Закрываем форму при нажатии на ESC
-        // document.addEventListener('keypress', (event) => {
-        //     this._callback(null);  
-        //     console.log(event)  
-        //     this.hide();
-        // });
-        // TODO: 
-        // Нажатия Tab/Shift+Tab переключают в цикле только по полям формы, они не позволяют переключиться на другие элементы страницы.
-        // При нажатии на Отмена или на клавишу Esc – должна вызываться функция callback(null). Клавиша Esc должна закрывать форму всегда, даже если поле для ввода сообщения не в фокусе.
+        document.addEventListener('keyup', function (event) {
+            // Закрываем форму при нажатии на ESC
+            if (event.keyCode == 27) {
+                _this._callback(null);
+                _this.hide();
+            }
+            // Нажатия Tab/Shift+Tab переключают в цикле только по полям формы, они не позволяют переключиться на другие элементы страницы.
+            var firsFormElement = _this._form.elements[0];
+            var lastFormElement = _this._form.elements[_this._form.elements.length - 1];
+            if (event.keyCode == 9 && !event.shiftKey) {
+                var result = [].some.call(_this._form.elements, function (item) {
+                    return document.activeElement === item;
+                });
+                if (!result) {
+                    firsFormElement.focus();
+                }
+                ;
+                return false;
+            }
+            if (event.keyCode == 9 && event.shiftKey) {
+                var result = [].some.call(_this._form.elements, function (item) {
+                    return document.activeElement === item;
+                });
+                if (!result) {
+                    lastFormElement.focus();
+                }
+                ;
+                return false;
+            }
+        });
     }
     ;
     ShowPrompt.prototype.show = function () {
