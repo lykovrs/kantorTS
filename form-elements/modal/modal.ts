@@ -11,7 +11,6 @@ class ShowPrompt {
         this._form = document.getElementById('prompt-form');
         this._promptMassege = document.getElementById('prompt-message');
         this._text = this._form.elements.text;
-        
         this._callback = callback;
         // Скрываем по клику кнопки отмены 
         this._form.elements.cancel.addEventListener('click', (event) => {

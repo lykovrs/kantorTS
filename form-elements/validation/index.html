@@ -13,34 +13,37 @@
         display: block;
         }
         /* ваши стили */
+        .error {
+            color: red;
+        }
   </style>
 </head>
 
 <body>
-    <form lpformnum="1">
+    <form>
         <table>
         <tbody><tr>
             <td>От кого</td>
             <td>
-            <input name="from" type="text">
+            <input name="from" type="text" data-validator-text="Укажите от кого.">
             </td>
         </tr>
         <tr>
             <td>Ваш пароль</td>
             <td>
-            <input name="password" type="password" >
+            <input name="password" type="password" data-validator-password="Укажите пароль.">
             </td>
         </tr>
         <tr>
             <td>Повторите пароль</td>
             <td>
-            <input name="password2" type="password">
+            <input name="password2" type="password" data-validator-password-confirmation="Пароли не совпадают.">
             </td>
         </tr>
         <tr>
             <td>Куда</td>
             <td>
-            <select name="to">
+            <select name="to" data-validator-text="Укажите, куда.">
                 <option></option>
                 <option value="1">Отдел снабжения</option>
                 <option value="2">Отдел разработки</option>
@@ -52,16 +55,17 @@
 
         Сообщение:
         <label>
-        <textarea name="message" style="display:block;width:400px;height:100px"></textarea>
+        <textarea name="message" style="display:block;width:400px;height:100px" data-validator-text="Отсутствует текст."></textarea>
         </label>
 
-        <input type="button" onclick="validate(this.form)" value="Проверить">
+        <input type="button" data-validator-validate="true" value="Проверить">
     </form>
 
-    <script src="valdate.js">
+    <script src="validator.js">
     </script>
      <script>
-        
+       var contactForm = document.forms[0];
+       new Validator(contactForm);
     </script>
 </body>
 
