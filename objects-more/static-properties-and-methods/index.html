@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h2>Счетчик объектов</h2>
+  
+    <script src="static-properties-and-methods.js">
+    </script>
+
+    <script>
+
+      new Article();
+      new Article();
+
+      Article.showStats(); // Всего: 2, Последняя: (дата)
+
+      new Article();
+
+      Article.showStats(); // Всего: 3, Последняя: (дата)
+    </script>
+
+</body>
+
+</html>
