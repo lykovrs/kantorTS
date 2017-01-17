@@ -1,5 +1,16 @@
 function sumArgs() {
-  let splice = [].splice;
-  let args = splice.call(this, arguments);
-  console.log(args);
+    let args = [].slice.call(arguments);
+    if (args.length) {
+        return args.reduce((a, b) => {
+            return a += b;
+        })
+    }
+}
+
+function sumArgs2(...args) {
+    if (args.length) {
+        return args.reduce((a, b) => {
+            return a += b;
+        })
+    }
 }
