@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+</head>
+
+<body>
+    <h2>
+      <a href="http://learn.javascript.ru/task/add-methods-fridge">Добавьте методы в холодильник
+</a>
+    </h2>
+
+    <script src="add-methods-fridge.js">
+    </script>
+
+
+    <script>
+        var fridge = new Fridge(500);
+        fridge.enable();
+        fridge.addFood({
+          title: "котлета",
+          calories: 100
+        });
+        fridge.addFood({
+          title: "сок",
+          calories: 30
+        });
+        fridge.addFood({
+          title: "зелень",
+          calories: 10
+        });
+        fridge.addFood({
+          title: "варенье",
+          calories: 150
+        });
+
+        fridge.removeFood("нет такой еды"); // без эффекта
+        alert( fridge.getFood().length ); // 4
+
+        var dietItems = fridge.filterFood(function(item) {
+          return item.calories < 50;
+        });
+
+        dietItems.forEach(function(item) {
+          alert( item.title ); // сок, зелень
+          fridge.removeFood(item);
+        });
+
+        alert( fridge.getFood().length ); // 2
+    </script>
+
+</body>
+
+</html>
