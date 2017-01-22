@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+</head>
+
+<body>
+    <h2>
+      <a href="http://learn.javascript.ru/task/coffeemachine-disable-stop">Останавливать кофеварку при выключении</a>
+    </h2>
+
+    <script src="coffeeMachine-fix-run.js">
+    </script>
+
+
+    <script>
+        var coffeeMachine = new CoffeeMachine(10000);
+        coffeeMachine.enable();
+        coffeeMachine.run();
+        coffeeMachine.disable(); // остановит работу, ничего не выведет
+    </script>
+
+</body>
+
+</html>
