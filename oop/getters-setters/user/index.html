@@ -3,15 +3,23 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Home</title>
 </head>
 
 <body>
-    <h2>Написать объект с геттерами и сеттерами</h2>
+    <h2>
+      <a href="http://learn.javascript.ru/task/object-with-getters-setters">Написать объект с геттерами и сеттерами</a>
+    </h2>
+
     <script src="user.js">
     </script>
 
 
     <script>
+      var user = new User();
+      user.setFirstName("Петя");
+      user.setSurname("Иванов");
+      alert( user.getFullName() ); // Петя Иванов
     </script>
 
 </body>
