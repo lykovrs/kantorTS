@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+</head>
+
+<body>
+    <h2>
+      <a href="http://learn.javascript.ru/task/setter-onready">Создать сеттер для onReady</a>
+    </h2>
+
+    <script src="coffeeMachine-fix-run.js">
+    </script>
+
+
+    <script>
+      var coffeeMachine = new CoffeeMachine(10000);
+      coffeeMachine.run(); // ошибка, кофеварка выключена!
+      // А вот так – всё в порядке:
+
+      var coffeeMachine = new CoffeeMachine(10000);
+      coffeeMachine.enable();
+      coffeeMachine.run(); // ...Кофе готов!
+    </script>
+
+</body>
+
+</html>
