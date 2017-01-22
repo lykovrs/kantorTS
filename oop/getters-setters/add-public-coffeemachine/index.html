@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+</head>
+
+<body>
+    <h2>
+      <a href="http://learn.javascript.ru/task/add-public-coffeemachine">Добавить публичный метод кофеварке</a>
+    </h2>
+
+    <script src="add-public-coffeemachine.js">
+    </script>
+
+
+    <script>
+        var coffeeMachine = new CoffeeMachine(100000, 400);
+        coffeeMachine.addWater(200);
+        coffeeMachine.addWater(100);
+        coffeeMachine.addWater(300); // Нельзя залить больше, чем 400
+        coffeeMachine.run();
+    </script>
+
+</body>
+
+</html>
