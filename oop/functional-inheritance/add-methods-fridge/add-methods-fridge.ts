@@ -16,7 +16,8 @@ class Machine {
         this._enabled = false;
     };
 
-    constructor(power) { }
+
+    constructor(power:number) { }
 }
 
 /**
@@ -26,6 +27,7 @@ class Fridge extends Machine {
     private _food = [];
     private _power: number = null;
 
+
     constructor(power) {
         super(power);
         this._power = power;
@@ -34,7 +36,7 @@ class Fridge extends Machine {
      * Добавляем еду в холодильник
      * @param {[type]} ...food произвольное колличество продуктов
      */
-    addFood(...food): void {
+    addFood(...food:any[]): void {
         if (this._enabled) {
             this._food = this._food.concat(food);
         } else {

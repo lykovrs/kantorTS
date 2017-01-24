@@ -32,10 +32,11 @@ var Machine = (function () {
 var Fridge = (function (_super) {
     __extends(Fridge, _super);
     function Fridge(power) {
-        _super.call(this, power);
-        this._food = [];
-        this._power = null;
-        this._power = power;
+        var _this = _super.call(this, power) || this;
+        _this._food = [];
+        _this._power = null;
+        _this._power = power;
+        return _this;
     }
     /**
      * Добавляем еду в холодильник
@@ -44,7 +45,7 @@ var Fridge = (function (_super) {
     Fridge.prototype.addFood = function () {
         var food = [];
         for (var _i = 0; _i < arguments.length; _i++) {
-            food[_i - 0] = arguments[_i];
+            food[_i] = arguments[_i];
         }
         if (this._enabled) {
             this._food = this._food.concat(food);
