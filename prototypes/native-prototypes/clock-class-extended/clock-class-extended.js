@@ -43,8 +43,10 @@ var ExtendedClock = (function (_super) {
     __extends(ExtendedClock, _super);
     function ExtendedClock(options) {
         var _this = _super.call(this, options) || this;
-        _this._precision = null;
-        _this._precision = options.precision;
+        _this._precision = 1000;
+        if (options.precision) {
+            _this._precision = options.precision;
+        }
         return _this;
     }
     ExtendedClock.prototype.start = function () {

@@ -2,7 +2,7 @@ interface IOprions {
     template: string;
 }
 
-interface IExtendedOprions extends IOprions{
+interface IExtendedOprions extends IOprions {
     precision: number;
 }
 
@@ -18,11 +18,11 @@ class ExClock {
     }
 
     protected _render() {
-        let output:string,
-            date:Date,
-            hours:any,
-            min:any,
-            sec:any;
+        let output: string,
+            date: Date,
+            hours: any,
+            min: any,
+            sec: any;
 
         date = new Date();
 
@@ -47,25 +47,26 @@ class ExClock {
     start() {
         this._render();
         this._timer = setInterval(() => {
-          this._render();
+            this._render();
         }, 1000);
     }
 
 }
 
 class ExtendedClock extends ExClock {
-  private _precision:number = null;
+    private _precision: number = 1000;
 
     constructor(options: IExtendedOprions) {
-      super(options);
-      this._precision = options.precision;
-
+        super(options);
+        if (options.precision) {
+            this._precision = options.precision;
+        }
     }
 
     start() {
-      this._render();
-      this._timer = setInterval(() => {
         this._render();
-      }, this._precision);
+        this._timer = setInterval(() => {
+            this._render();
+        }, this._precision);
     }
 }
