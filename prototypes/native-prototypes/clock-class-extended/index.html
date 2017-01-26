@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+</head>
+
+<body>
+    <h2>
+      <a href="http://learn.javascript.ru/task/clock-class-extended">Класс "расширенные часы"</a>
+    </h2>
+
+    <script src="clock-class-extended.js">
+    </script>
+
+    <script>
+        // var clock = new Clock({
+        //     template: 'h:m:s'
+        // });
+        // clock.start();
+
+        /*
+        Надо: часы, которые тикают раз в 10 секунд (точность 10000)
+        */
+        var lowResolutionClock = new ExtendedClock({
+            template: 'h:m:s',
+            precision: 10000
+        });
+
+        lowResolutionClock.start();
+
+        for (var i = 0; i < array.length; i++) {
+          array[i]
+        }
+    </script>
+
+</body>
+
+</html>
