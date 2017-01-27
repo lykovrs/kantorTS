@@ -3,22 +3,35 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Menu = (function () {
-    function Menu(state) {
+/**
+ * Класс Меню
+ */
+var SuperMenu = (function () {
+    function SuperMenu(state) {
         this.STATE_OPEN = 1;
         this.STATE_CLOSED = 0;
         this._state = null;
         this._state = state || this.STATE_CLOSED;
     }
-    Menu.prototype.open = function () {
+    /**
+     * Меняем состояние на открытое
+     */
+    SuperMenu.prototype.open = function () {
         this._state = this.STATE_OPEN;
     };
     ;
-    Menu.prototype.close = function () {
+    /**
+     * Меняем состояние на закрытое
+     */
+    SuperMenu.prototype.close = function () {
         this._state = this.STATE_CLOSED;
     };
     ;
-    Menu.prototype._stateAsString = function () {
+    /**
+     * Определяем текущее состояние
+     * @return {string} состояние в виде строкового представления
+     */
+    SuperMenu.prototype._stateAsString = function () {
         switch (this._state) {
             case this.STATE_OPEN:
                 return 'открыто';
@@ -27,36 +40,44 @@ var Menu = (function () {
         }
     };
     ;
-    Menu.prototype.showState = function () {
+    /**
+     * Вывод текущего состояния
+     */
+    SuperMenu.prototype.showState = function () {
         alert(this._stateAsString());
     };
     ;
-    return Menu;
+    return SuperMenu;
 }());
 ;
+/**
+ * Расширяем возможности нашего меню анимацией
+ */
 var AnimatingMenu = (function (_super) {
     __extends(AnimatingMenu, _super);
     function AnimatingMenu(state) {
         var _this = _super.call(this, state) || this;
         _this.STATE_ANIMATING = 2;
-        _this._timeStamp = null;
         return _this;
     }
-    // TODO:Исправить метод
-    AnimatingMenu.prototype.open = function () {
-        var _this = this;
-        debugger;
-        this._state = this.STATE_ANIMATING;
-        if (this._state == 2) {
-            alert('анимация');
+    /**
+     * Расшираем метод определения состояния, добавив состояние анимации
+     * @return {string} [description]
+     */
+    AnimatingMenu.prototype._stateAsString = function () {
+        if (this._state === 2) {
+            return 'анимация';
         }
-        this._timeStamp = setTimeout(function () {
-            _this.open();
-        }, 1000);
+        else {
+            return _super.prototype._stateAsString.call(this);
+        }
     };
-    AnimatingMenu.prototype.close = function () {
-        clearTimeout(this._timeStamp);
-        _super.prototype.close.call(this);
+    ;
+    /**
+     * Добавляем метод с анимацией
+     */
+    AnimatingMenu.prototype.animating = function () {
+        this._state = this.STATE_ANIMATING;
     };
     return AnimatingMenu;
-}(Menu));
+}(SuperMenu));
