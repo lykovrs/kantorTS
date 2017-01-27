@@ -54,7 +54,7 @@ class AnimatingMenu extends SuperMenu {
     }
     /**
      * Расшираем метод определения состояния, добавив состояние анимации
-     * @return {string} [description]
+     * @return {string} строку состояния
      */
     protected _stateAsString(): string {
         if (this._state === 2) {

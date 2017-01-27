@@ -62,7 +62,7 @@ var AnimatingMenu = (function (_super) {
     }
     /**
      * Расшираем метод определения состояния, добавив состояние анимации
-     * @return {string} [description]
+     * @return {string} строку состояния
      */
     AnimatingMenu.prototype._stateAsString = function () {
         if (this._state === 2) {
