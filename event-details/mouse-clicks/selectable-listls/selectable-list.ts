@@ -20,25 +20,32 @@ class SelectableList {
                 // Если зажата клавиша ctrl или cmd выделение не снимаем
                 if (event.ctrlKey || event.metaKey) {
                     this._select(target, list);
-                } else if (event.shiftKey) {
+                } else if (event.shiftKey && this.selectedElements.length) {
                     // Если зажата клавиша shift выделяем диапазон списка
-                    let starElementPosition = this.selectedElements.length - 1;
+                    let startElementPosition = this.list.indexOf(this.selectedElements[this.selectedElements.length - 1]);
                     let endElementPosition = this.list.indexOf(target);
-                    let itemPosition = null;
-                    this.list.forEach(item => {
-                        // debugger
-                        itemPosition = this.list.indexOf(item);
-                        if (starElementPosition < endElementPosition && itemPosition >= starElementPosition && itemPosition <= endElementPosition) {
-                            this._select(item, list);
-                        }
-                        if (starElementPosition > endElementPosition && itemPosition <= starElementPosition && itemPosition >= endElementPosition) {
-                            this._select(item, list);
-                        }
-                    })
+
+                    let opt = {
+                      max: Math.max(startElementPosition, endElementPosition),
+                      min: Math.min(startElementPosition, endElementPosition)
+                    };
+                    // console.log(opt)
+                    debugger
+                    let length = this.list.length;
+                    let i = 0;
+                    for (i; i < length; i+=1) {
+                      // if(this.list[i] >= opt.min && this.list[i] <= opt.max) {
+                        this._select(this.list[i], list);
+                      // }
+
+                    }
+                    // let currentElement = this.list[opt.min];
+                    // do {
+                    //
+                    //   currentElement = currentElement.nextSibling;
+                    // } while(currentElement === this.list[opt.max])
 
 
-
-                    console.log(starElementPosition, endElementPosition)
 
 
 
@@ -69,6 +76,6 @@ class SelectableList {
         this.selectedElements.forEach((item) => {
             item.classList.remove('selected');
         })
-        this.selectedElements.length = 0;
+        // this.selectedElements.length = 0;
     }
 }
