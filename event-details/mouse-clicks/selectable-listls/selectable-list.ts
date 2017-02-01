@@ -22,33 +22,24 @@ class SelectableList {
                     this._select(target, list);
                 } else if (event.shiftKey && this.selectedElements.length) {
                     // Если зажата клавиша shift выделяем диапазон списка
+                    //
+                    // Предыдущий выделенный элемент
                     let startElementPosition = this.list.indexOf(this.selectedElements[this.selectedElements.length - 1]);
+                    // Текущий выделенный элемент
                     let endElementPosition = this.list.indexOf(target);
-
+                    // Выделяем от меньшей позиции до большей
                     let opt = {
-                      max: Math.max(startElementPosition, endElementPosition),
-                      min: Math.min(startElementPosition, endElementPosition)
+                        max: Math.max(startElementPosition, endElementPosition),
+                        min: Math.min(startElementPosition, endElementPosition)
                     };
-                    // console.log(opt)
-                    debugger
+                    // Устанавливаем выделение на элементе списка
                     let length = this.list.length;
                     let i = 0;
-                    for (i; i < length; i+=1) {
-                      // if(this.list[i] >= opt.min && this.list[i] <= opt.max) {
-                        this._select(this.list[i], list);
-                      // }
-
+                    for (i; i < length; i += 1) {
+                        if (i >= opt.min && i <= opt.max) {
+                            this._select(this.list[i], list);
+                        }
                     }
-                    // let currentElement = this.list[opt.min];
-                    // do {
-                    //
-                    //   currentElement = currentElement.nextSibling;
-                    // } while(currentElement === this.list[opt.max])
-
-
-
-
-
                 } else {
                     // В остальных случаях снимаем выделение и чистим выбранные значения
                     if (this.selectedElements.length) {

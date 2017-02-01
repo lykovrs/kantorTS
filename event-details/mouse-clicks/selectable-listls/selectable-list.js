@@ -22,19 +22,23 @@ var SelectableList = (function () {
                 }
                 else if (event.shiftKey && _this.selectedElements.length) {
                     // Если зажата клавиша shift выделяем диапазон списка
+                    //
+                    // Предыдущий выделенный элемент
                     var startElementPosition = _this.list.indexOf(_this.selectedElements[_this.selectedElements.length - 1]);
+                    // Текущий выделенный элемент
                     var endElementPosition = _this.list.indexOf(target);
+                    // Выделяем от меньшей позиции до большей
                     var opt = {
                         max: Math.max(startElementPosition, endElementPosition),
                         min: Math.min(startElementPosition, endElementPosition)
                     };
-                    // console.log(opt)
-                    debugger;
+                    // Устанавливаем выделение на элементе списка
                     var length_1 = _this.list.length;
                     var i_2 = 0;
                     for (i_2; i_2 < length_1; i_2 += 1) {
-                        // if(this.list[i] >= opt.min && this.list[i] <= opt.max) {
-                        _this._select(_this.list[i_2], list);
+                        if (i_2 >= opt.min && i_2 <= opt.max) {
+                            _this._select(_this.list[i_2], list);
+                        }
                     }
                 }
                 else {
