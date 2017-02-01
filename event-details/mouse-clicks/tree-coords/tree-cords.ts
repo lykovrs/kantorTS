@@ -1,4 +1,4 @@
-class Tree {
+class TreeCords {
     private _wrapper:HTMLElement;
     private _items:NodeList;
 
