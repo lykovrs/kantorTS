@@ -18,7 +18,7 @@ var GameFootball = (function () {
             top: locationStadium.top + this._stadum.clientTop,
             left: locationStadium.left + this._stadum.clientLeft
         };
-        // Расположение мяча с поправкой для центрирования 
+        // Расположение мяча с поправкой для центрирования
         var ballLocation = {
             top: event.clientY - locationStadiumInner.top - this._ball.clientHeight / 2,
             left: event.clientX - locationStadiumInner.left - this._ball.clientWidth / 2

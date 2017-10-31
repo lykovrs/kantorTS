@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+</head>
+
+<body>
+    <h2>
+      <a href="http://learn.javascript.ru/task/format-error">Унаследуйте от SyntaxError</a>
+    </h2>
+
+    <script src="format-error.js">
+    </script>
+
+
+    <script>
+        var err = new FormatError("ошибка форматирования");
+
+        alert(err.message); // ошибка форматирования
+        alert(err.name); // FormatError
+        alert(err.stack); // стек на момент генерации ошибки
+
+        alert(err instanceof SyntaxError); // true
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Home</title>
+    <meta charset="utf-8">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <ul class="tree">
+        <li><span>Животные
+        </span><ul>
+            <li><span>Млекопитающие
+            </span><ul>
+                <li><span>Коровы</span></li>
+                <li><span>Ослы</span></li>
+                <li><span>Собаки</span></li>
+                <li><span>Тигры</span></li>
+            </ul>
+            </li>
+            <li><span>Другие
+            </span><ul hidden="">
+                <li><span>Змеи</span></li>
+                <li><span>Птицы</span></li>
+                <li><span>Ящерицы</span></li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+        <li><span>Рыбы
+        </span><ul>
+            <li><span>Аквариумные
+            </span><ul>
+                <li><span>Гуппи</span></li>
+                <li><span>Скалярии</span></li>
+            </ul>
+
+            </li>
+            <li><span>Морские
+            </span><ul>
+                <li><span>Морская форель</span></li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+    </ul>
+    <script src="tree.js"></script>
+    <script>
+        var tree = document.getElementsByClassName('tree')[0];
+        new Tree(tree);
+    </script>
+    <ul class="tree">
+        <li><span>Животные
+        </span><ul>
+            <li><span>Млекопитающие
+            </span><ul>
+                <li><span>Коровы</span></li>
+                <li><span>Ослы</span></li>
+                <li><span>Собаки</span></li>
+                <li><span>Тигры</span></li>
+            </ul>
+            </li>
+            <li><span>Другие
+            </span><ul hidden="">
+                <li><span>Змеи</span></li>
+                <li><span>Птицы</span></li>
+                <li><span>Ящерицы</span></li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+        <li><span>Рыбы
+        </span><ul>
+            <li><span>Аквариумные
+            </span><ul>
+                <li><span>Гуппи</span></li>
+                <li><span>Скалярии</span></li>
+            </ul>
+
+            </li>
+            <li><span>Морские
+            </span><ul>
+                <li><span>Морская форель</span></li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+    </ul>
+    <script src="tree-cords.js"></script>
+    <script>
+        var tree = document.getElementsByClassName('tree')[0];
+        new TreeCords(tree);
+    </script>
+
+</body>
+
+</html>
